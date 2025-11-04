@@ -1,53 +1,41 @@
 import { Card } from "@/components/ui/card";
-import { Image } from "lucide-react";
-
-// TODO: Replace these placeholder images with your actual photos
-// Import your images like this:
-import photo1 from "@/assets/photo1.jpg";
-import photo2 from "@/assets/photo2.jpg";
-import photo3 from "@/assets/photo3.jpg";
-import photo4 from "@/assets/photo4.jpg";
-import photo5 from "@/assets/photo5.jpg";
-import photo6 from "@/assets/photo6.jpg";
-
-// etc.
 
 const photos = [
   {
     id: 1,
-    src: photo1,  // Uncomment and use your imported image
+    src: "/photos/photo1.jpg",
     alt: "Beautiful memory 1",
-    caption: "Our first adventure together"
+    caption: "Our first adventure together",
   },
   {
     id: 2,
-    src: photo2,
+    src: "/photos/photo2.jpg",
     alt: "Beautiful memory 2",
-    caption: "That unforgettable day"
+    caption: "That unforgettable day",
   },
   {
     id: 3,
-    src: photo3,
+    src: "/photos/photo3.jpg",
     alt: "Beautiful memory 3",
-    caption: "Pure happiness"
+    caption: "Pure happiness",
   },
   {
     id: 4,
-    src: photo4,
+    src: "/photos/photo4.jpg",
     alt: "Beautiful memory 4",
-    caption: "Always making me smile"
+    caption: "Always making me smile",
   },
   {
     id: 5,
-    src: photo5,
+    src: "/photos/photo5.jpg",
     alt: "Beautiful memory 5",
-    caption: "My favorite person"
+    caption: "My favorite person",
   },
   {
     id: 6,
-    src: photo6,
+    src: "/photos/photo6.jpg",
     alt: "Beautiful memory 6",
-    caption: "Forever grateful for you"
+    caption: "Forever grateful for you",
   },
 ];
 
@@ -61,21 +49,21 @@ export const PhotoGallery = () => {
         <p className="text-center text-muted-foreground mb-12 text-lg">
           Every picture tells our story 💕
         </p>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {photos.filter(p => p.src).map((photo, index) => (
-            <Card 
+          {photos.map((photo, index) => (
+            <Card
               key={photo.id}
               className="group overflow-hidden shadow-soft hover:shadow-float transition-all duration-300 hover:scale-105 animate-fade-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="aspect-square bg-secondary/80 flex items-center justify-center relative overflow-hidden">
-                  <img 
-                    src={photo.src} 
-                    alt={photo.alt}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                  />
-                
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+
                 {/* Caption Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-6">
                   <p className="text-white font-sans text-center font-medium">
